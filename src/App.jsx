@@ -15,6 +15,18 @@ const App = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const nameFromURL = params.get('invitee_name');
+    
+    if (nameFromURL) {
+      setInviteeName(nameFromURL);
+      fetchInviteeData(nameFromURL);
+    } else {
+      setError('No invitee name provided in URL.');
+    }
+  }, []);
 
   const fetchInviteeData = async () => {
     if (!inviteeName.trim()) {
@@ -28,8 +40,8 @@ const App = () => {
 
     try {
       const response = await database.listDocuments(
-        '[YOUR_DATABASE_ID]',  // Replace with your Appwrite database ID
-        '[YOUR_COLLECTION_ID]',  // Replace with your Appwrite collection ID
+        import.meta.env.DB_ID,  // Replace with your Appwrite database ID
+        import.meta.env.COL_ID,  // Replace with your Appwrite collection ID
         [Query.equal('invitee_name', inviteeName)]
       );
 
