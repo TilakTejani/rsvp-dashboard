@@ -15,8 +15,9 @@ const App = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  
+  console.log(window.location.search)
   useEffect(() => {
+    
     const params = new URLSearchParams(window.location.search);
     const nameFromURL = params.get('invitee_name');
     console.log(nameFromURL)
