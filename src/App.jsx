@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const nameFromURL = params.get('invitee_name');
-    
+    console.log(nameFromURL)
     if (nameFromURL) {
       setInviteeName(nameFromURL);
       fetchInviteeData(nameFromURL);
