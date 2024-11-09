@@ -4,8 +4,8 @@ import { Container, Row, Col, Table, Button, Form, Alert } from 'react-bootstrap
 
 // Initialize Appwrite client
 const client = new Client()
-.setEndpoint('https://cloud.appwrite.io/v1')
-.setProject('66f6375b00089a0a3ac1'); // Replace with your project ID
+.setEndpoint(import.meta.env.ENDPOINT)
+.setProject(import.meta.env.PROJECT_ID); // Replace with your project ID
 
 const database = new Databases(client);
 
