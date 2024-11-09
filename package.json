@@ -1,7 +1,7 @@
 {
   "name": "rsvp-dashboard",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "homepage": "https://tilaktejani.github.io/rsvp-dashboard",
   "scripts": {
@@ -13,6 +13,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.6",
     "appwrite": "^14.0.1",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
